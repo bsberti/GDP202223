@@ -15,17 +15,15 @@ public:
 	Vector3(const Vector3&);
 
 	//Assignment Overload
-	Vector3& operator=(const Vector3& rhs);
+	Vector3 operator=(const Vector3& rhs);
 
 	//Operator + Overload
 	Vector3& operator+(const Vector3& rhs);
 
 	//Operator - Overload
 	Vector3& operator-(const Vector3& rhs);
-	
-	//
 
-	//Deconstructor
+	//Destructor
 	~Vector3();
 	
 	float m_X;
@@ -38,12 +36,11 @@ public:
 	Vector3 position;
 };
 
-Vector3::Vector3()
-	: m_X(0)
-	, m_Y(0)
-	, m_Z(0)
-{
+Vector3::Vector3() {
 	std::cout << " Vector3::Vector3()\n";
+	m_X = 0;
+	m_Y = 0;
+	m_Z = 0;
 }
 
 Vector3::Vector3(const Vector3& other)
@@ -54,7 +51,7 @@ Vector3::Vector3(const Vector3& other)
 	std::cout << " Vector3::Vector3(const Vector3& other)\n";
 }
 
-Vector3& Vector3::operator=(const Vector3& rhs) {
+Vector3 Vector3::operator=(const Vector3& rhs) {
 	std::cout << " Vector3::operator=(const Vector3& rhs)\n";
 	m_X = rhs.m_X;
 	m_Y = rhs.m_Y;
@@ -72,8 +69,12 @@ Vector3& Vector3::operator+(const Vector3& rhs) {
 }
 
 Vector3& Vector3::operator-(const Vector3& rhs) {
-	//TODO
-
+	std::cout << " Vector3::operator-(const Vector3& rhs)\n";
+	Vector3 newVector;
+	newVector.m_X = m_X + (-1 * rhs.m_X);
+	newVector.m_Y = m_Y + (-1 * rhs.m_Y);
+	newVector.m_Z = m_Y + (-1 * rhs.m_Z);
+	return newVector;
 }
 
 Vector3::~Vector3() {
@@ -85,7 +86,6 @@ Vector3 Multiply(Vector3 v, float a) {
 	v.m_X *= a;
 	v.m_Y *= a;
 	v.m_Z *= a;
-
 	return v;
 }
 
@@ -114,10 +114,41 @@ void main()
 	std::cout << "VectorC = VectorA + VectorB:\n";
 	vC = vA + vB;
 
-	std::cout << "\n\n-------------------------------\n\n";
+	std::cout << "\n-------------------------------------------------------\n";
 
+	std::cout << "VectorD:\n";
 	Vector3 vD;
-	vD.m_X = 5;
 
+	std::cout << "VectorE:\n";
+	Vector3& vE = vD;
+
+	vD.m_X = 5;
+	vE.m_Y = 7;
+
+	std::cout << "VectorF:\n";
+	Vector3 vF;
+	vF = Multiply(vD, 3);
+
+	std::cout << "\n-------------------------------------------------------\n";
+
+	std::cout << "VectorG:\n";
+	Vector3 vG;
+
+	std::cout << "VectorH:\n";
+	Vector3 vH;
+
+	vG.m_X = 5;
+	vG.m_Y = 2;
+	vG.m_Z = 1;
+
+	vH.m_Y = 5;
+	vH.m_X = 3;
+	vH.m_Z = 9;
+
+	std::cout << "VectorI:\n";
+	Vector3 vI;
+	vI = vG - vH;
+
+	int breakpoint = 5;
 	std::cout << "Ending The Program!\n";
 }
