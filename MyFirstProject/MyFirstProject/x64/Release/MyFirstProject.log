@@ -1,0 +1,7 @@
+﻿  someFunctions.cpp
+  theMain.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 100 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  MyFirstProject.vcxproj -> C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\MyFirstProject\x64\Release\MyFirstProject.exe
