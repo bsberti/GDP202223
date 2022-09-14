@@ -1,72 +1,41 @@
 #include <iostream>
 
 #include "Vector3.h"
+#include "Particle.h"
 
-class Particle {
-public:
-	Vector3 position;
-};
+void PrintParticleInfo(const Particle& p) {
+	std::cout << "Velocity: " << p.velocity.y << "\nPosition: " << p.position.y << "\n\n";
+}
 
-void main()
-{
-	std::cout << "VectorA:\n";
-	Vector3 vA;
 
-	std::cout << "VectorB:\n";
-	Vector3 vB;
+void VectorTest() {
+	Vector3 v(2, 3, 4);
+	float mag = v.Magnitude();
+	std::cout << "Vector(2, 3, 4)\n";
+	std::cout << "Magnitude of the vector is: " << mag << "\n";
 
-	vA.x = 5.f;
-	vA.y = 2.f;
-	vA.z = 1.f;
+	v.Normalize();
+	std::cout << "The vector normalized is: (" <<
+		v.x << ", " << v.y << ", " << v.z << ")\n";
 
-	vB.x = 3.f;
-	vB.y = 5.f;
-	vB.z = 9.f;
+	Vector3 invV = v.Inverse();
+	std::cout << "The inverse of the normalized vector is: (" <<
+		invV.x << ", " << invV.y << ", " << invV.z << ")\n";
+}
+void ParticleTest() {
+	Particle p;
+	p.position = Vector3(0.f);
+	p.velocity = Vector3(0.f, 5.f, 0.f);
+	p.acceleration = Vector3(0.f, -1.f, 0.f);
 
-	std::cout << "VectorA = VectorB:\n";
-	vA = vB;
+	while (p.position.y >= 0) {
+		p.Integrate(0.1f);
+		PrintParticleInfo(p);
+	}
+}
 
-	std::cout << "VectorC:\n";
-	Vector3 vC;
+int main() {
+	ParticleTest();
 
-	std::cout << "VectorC = VectorA + VectorB:\n";
-	vC = vA + vB;
-
-	std::cout << "\n-------------------------------------------------------\n";
-
-	std::cout << "VectorD:\n";
-	Vector3 vD;
-
-	std::cout << "VectorE:\n";
-	Vector3& vE = vD;
-
-	vD.x = 5.f;
-	vE.y = 7.f;
-
-	std::cout << "VectorF:\n";
-	Vector3 vF;
-	vF = vD * 3.f;
-
-	std::cout << "\n-------------------------------------------------------\n";
-
-	std::cout << "VectorG:\n";
-	Vector3 vG;
-
-	std::cout << "VectorH:\n";
-	Vector3 vH;
-
-	vG.x = 5.0f;
-	vG.y = 2.0f;
-	vG.z = 1.0f;
-
-	vH.x = 5.0f;
-	vH.y = 3.0f;
-	vH.z = 9.0f;
-
-	std::cout << "VectorI:\n";
-	Vector3 vI;
-	vI = vG - vH;
-
-	int breakpoint = 5;
-	std::cout << "Ending The Program!\n";
+	return 0;
 }
