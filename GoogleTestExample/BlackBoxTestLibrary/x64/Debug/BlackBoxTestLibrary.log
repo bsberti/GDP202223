@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  BlackBoxTest.cpp
+C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\BlackBoxTestLibrary\BlackBoxTest.cpp(9,22): warning C4273: 'Fibonacci': inconsistent dll linkage
+C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\BlackBoxTestLibrary\BlackBoxTest.h(12,23): message : see previous definition of 'Fibonacci'
+  dllmain.cpp
+  Generating Code...
+     Creating library C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Debug\BlackBoxTestLibrary_D.lib and object C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Debug\BlackBoxTestLibrary_D.exp
+  BlackBoxTestLibrary.vcxproj -> C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Debug\BlackBoxTestLibrary_D.dll

@@ -1,0 +1,11 @@
+﻿  pch.cpp
+  BlackBoxTest.cpp
+C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\BlackBoxTestLibrary\BlackBoxTest.cpp(9,22): warning C4273: 'Fibonacci': inconsistent dll linkage
+C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\BlackBoxTestLibrary\BlackBoxTest.h(12,23): message : see previous definition of 'Fibonacci'
+  dllmain.cpp
+     Creating library C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Release\BlackBoxTestLibrary.lib and object C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Release\BlackBoxTestLibrary.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  BlackBoxTestLibrary.vcxproj -> C:\Users\Bruno Berti\Documents\Fanshawe\Git\GDP202223\GoogleTestExample\x64\Release\BlackBoxTestLibrary.dll
